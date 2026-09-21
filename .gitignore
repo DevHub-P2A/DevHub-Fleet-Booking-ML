@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.env
+.ipynb_checkpoints/
+
+Fleet_Fuel_Dataset_Preprocessing.zip
+X_train.csv
+X_test.csv
+y_train.csv
+y_test.csv
+fleet_fuel_dataset_10000_preprocessed.csv
