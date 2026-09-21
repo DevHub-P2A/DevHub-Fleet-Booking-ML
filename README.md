@@ -97,6 +97,47 @@ This dataset is part of the University Motor Pool / Fleet Management System, whi
 
 The prepared dataset will be used by the AI team for Machine Learning model development.
 
+
+## Machine Learning Model
+
+A Linear Regression model was trained using the prepared dataset.
+
+The model was evaluated using MAE, RMSE, and R².
+
+A baseline model using the mean target value was also used for comparison.
+
+### Evaluation Results
+
+| Model | MAE | RMSE | R² |
+|---|---:|---:|---:|
+| Baseline | 1.769871 | 2.507892 | -0.000113 |
+| Linear Regression | 0.634576 | 0.952300 | 0.855795 |
+
+The Linear Regression model achieved an R² of approximately 0.856 on the test set.
+
+## FastAPI
+
+The trained Machine Learning model is exposed through a FastAPI REST API.
+
+### API Endpoint
+
+```text
+POST /predict
+Input Example
+{
+  "Distance_km": 30,
+  "Vehicle_Type": "Sedan",
+  "Passengers": 4,
+  "Nominal_L_per_100km": 7.5,
+  "Duration_min": 50
+}
+Model Files
+fuel_model.pkl - Trained Machine Learning model.
+scaler.pkl - Saved feature scaler.
+main.py - FastAPI application.
+
+The API receives trip and vehicle information and returns the estimated fuel consumption.
+
 ## Status
 
 - [x] Dataset preparation
@@ -107,6 +148,7 @@ The prepared dataset will be used by the AI team for Machine Learning model deve
 - [x] Train/Test split
 - [x] Feature scaling
 - [x] Preprocessed files saved
-- [ ] Machine Learning model training
-- [ ] Model evaluation
-- [ ] Model integration with ASP.NET Core MVC
+- [x] Machine Learning model training
+- [x] Model evaluation
+- [x] FastAPI model integration
+- [ ] Model integration with ASP.NET Core MVC MVC
