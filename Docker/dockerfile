@@ -9,5 +9,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# Testing that the dockerfile is accessing the actual project
-CMD ["python", "testing/dockerTest.py"]
+# Runing the uvicorn service
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
