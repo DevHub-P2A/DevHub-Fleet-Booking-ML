@@ -29,8 +29,9 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ${{ github.workspace }}
-          file: ${{ github.workspace }}/Docker/Dockerfile
+          file: ${{ github.workspace }}/docker/Dockerfile
           push: true
+          platforms: linux/arm64
           tags: ${{ env.IMAGE_NAME }}:latest
 
       - name: Deploy to VPS
