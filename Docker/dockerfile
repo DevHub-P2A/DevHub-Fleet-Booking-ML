@@ -1,9 +1,10 @@
+# Pulling a python image
 FROM python:3.13-slim
 
 WORKDIR /app
 
 # Downloading used python libraries
-COPY /Docker/requirements.txt .
+COPY /Docker/requirements.txt .s
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
